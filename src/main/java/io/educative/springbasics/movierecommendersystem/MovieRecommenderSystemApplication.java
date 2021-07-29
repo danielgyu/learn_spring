@@ -1,10 +1,9 @@
 package io.educative.springbasics.movierecommendersystem;
 
-import io.educative.springbasics.movierecommendersystem.lesson1.ContentBasedFilter;
 import io.educative.springbasics.movierecommendersystem.lesson1.RecommenderImplementation;
-import io.educative.springbasics.movierecommendersystem.lesson2.CollaborativeFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.util.Arrays;
 
@@ -12,11 +11,11 @@ import java.util.Arrays;
 public class MovieRecommenderSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MovieRecommenderSystemApplication.class, args);
+		ApplicationContext appContext = SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 
-		RecommenderImplementation implementation = new RecommenderImplementation(new CollaborativeFilter());
-		String[] recommendedMovies = implementation.recommendMovies("Finding Dory");
+		RecommenderImplementation recommender = appContext.getBean(RecommenderImplementation.class);
 
-		System.out.println(Arrays.toString(recommendedMovies));
+		String[] result = recommender.recommendMovies("Finding Dory");
+		System.out.println(Arrays.toString(result));
 	}
 }
