@@ -3,10 +3,8 @@ package io.educative.springbasics.movierecommendersystem.lesson5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
 public class RecommenderImplementation {
 
-    @Autowired
     private Filter contentBasedFilter;
 
     public String [] recommendMovies (String movie) {
