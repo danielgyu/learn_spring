@@ -1,9 +1,11 @@
-package io.educative.springbasics.movierecommendersystem.lesson2;
+package io.educative.springbasics.movierecommendersystem.lesson6;
 
 import org.springframework.stereotype.Component;
 
+@Component
 public class CollaborativeFilter implements Filter{
-    public String[] getRecommendation(String move) {
+
+    public String[] getRecommendations(String movie) {
         return new String[] {"Finding Nemo", "Ice Age", "Toy Story"};
     }
 }

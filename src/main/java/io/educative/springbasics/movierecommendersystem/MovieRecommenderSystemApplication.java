@@ -1,6 +1,6 @@
 package io.educative.springbasics.movierecommendersystem;
 
-import io.educative.springbasics.movierecommendersystem.lesson1.RecommenderImplementation;
+import io.educative.springbasics.movierecommendersystem.lesson6.RecommenderImplementation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
