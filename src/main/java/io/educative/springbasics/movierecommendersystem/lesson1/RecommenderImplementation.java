@@ -8,16 +8,16 @@ import org.springframework.stereotype.Component;
 public class RecommenderImplementation {
 
     @Autowired
-    private Filter filter;
+    private Filter contentBasedFilter;
 
     public RecommenderImplementation (Filter filter) {
     	super();
-    	this.filter = filter;
+    	this.contentBasedFilter = filter;
 	}
 
 	public String[] recommendMovies (String movie) {
-        System.out.println("name of the filter: " + filter);
-        String[] movieList = filter.getRecommendation("Finding Dory");
+        System.out.println("name of the filter: " + contentBasedFilter);
+        String[] movieList = contentBasedFilter.getRecommendation("Finding Dory");
 
 	    return movieList;
 	}
